@@ -22,7 +22,7 @@ build_package() {
   fi
 
   NIXPKGS_ALLOW_UNFREE=1 timeout "$TIMEOUT" \
-    nix-build -E "(import $NIXPKGS_PATH {}).${name}" \
+    nix-build -E "(import $NIXPKGS_PATH {}).\"${name}"\" \
       --max-jobs 1 \
       --cores 1 \
       --no-link \
